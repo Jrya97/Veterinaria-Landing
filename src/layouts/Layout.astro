@@ -1,23 +1,33 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Clínica Veterinaria" } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/Logo.webp" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-gray-50 text-gray-800 font-sans">
+		<script>
+			import { initLenis } from '../utils/lenis';
+			import { setupHeroTimeline, setupScrollAnimations } from '../utils/animations';
+			document.addEventListener('DOMContentLoaded', () => {
+				initLenis();
+				setupHeroTimeline();
+				setupScrollAnimations();
+			});
+		</script>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

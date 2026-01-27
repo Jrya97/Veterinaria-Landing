@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/HeroImage.webp';
+import HeroFondo from '../assets/HeroFondo.webp';
+import Fondo1 from '../assets/fondo1.webp'
+---
+
+<section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <Image 
+      src={Fondo1}
+      alt="Veterinary Clinic Background" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-linear-to-r from-white/60 via-white/50 to-transparent"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2 pt-10 md:pt-0">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-6 hero-animate-element opacity-0 border border-teal-600/30 bg-transparent text-teal-800 backdrop-blur-[2px]">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        Urgencias 24/7 Disponibles
+      </div>
+      <h2 class="text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight hero-animate-element opacity-0">
+        Salud y amor <br/>
+        para tu <span class="text-transparent bg-clip-text bg-linear-to-r from-teal-500 to-emerald-600">mejor amigo</span>
+      </h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-lg hero-animate-element opacity-0 leading-relaxed">
+        Tecnología de vanguardia y un equipo apasionado para garantizar el bienestar integral de tus mascotas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 hero-animate-element opacity-0">
+        <a href="#contacto" class="bg-teal-600 text-white px-8 py-4 rounded-full text-center font-bold text-lg hover:bg-teal-700 transition shadow-xl hover:shadow-teal-500/40 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+          <span>Reservar Cita</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#servicios" class="bg-white/50 backdrop-blur-sm text-teal-700 border border-teal-200 px-8 py-4 rounded-full text-center font-bold text-lg hover:bg-white hover:border-teal-400 transition shadow-sm hover:shadow-md">
+          Conocer Servicios
+        </a>
+      </div>
+      
+      <div class="mt-12 flex items-center gap-4 hero-animate-element opacity-0">
+        <div class="flex -space-x-4">
+          <img class="hover:scale-125 transition-all duration-300 w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User" />
+          <img class="hover:scale-125 transition-all duration-300 w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="User" />
+          <img class="hover:scale-125 transition-all duration-300 w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="User" />
+          <div class="hover:scale-125 transition-all duration-300 w-12 h-12 rounded-full border-2 border-white bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xs">
+            +5k
+          </div>
+        </div>
+        <div class="hover:scale-110 transition-all duration-300">
+          <div class="flex text-yellow-400 text-sm">★★★★★</div>
+          <p class="text-sm text-gray-500 font-medium">Clientes felices</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating Card Element (Desktop only) -->
+    <div class="hidden md:block w-1/2 relative">
+      <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500 ">
+        <Image 
+          src={HeroImage}
+          alt="Vet examining dog" 
+          class="w-full h-auto object-cover"
+        />
+        <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-8 text-white">
+          <p class="font-bold text-lg">Cuidado experto</p>
+          <p class="text-sm opacity-90">En manos de profesionales</p>
+        </div>
+      </div>
+      <!-- Decorative Elements -->
+      <div class="absolute -top-10 -right-10 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-0 animate-blob hero-blob"></div>
+      <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-0 animate-blob animation-delay-2000 hero-blob"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+const testimonials = [
+  {
+    name: "María García",
+    pet: "Luna (Golden Retriever)",
+    text: "El trato es inmejorable. Luna suele tener miedo al veterinario, pero aquí entra moviendo la cola.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    name: "Carlos Rodríguez",
+    pet: "Michi (Gato común)",
+    text: "Profesionales de primera. Salvaron a Michi de una situación crítica. Eternamente agradecido.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    name: "Ana Martínez",
+    pet: "Max (Beagle)",
+    text: "Las instalaciones son modernas y súper limpias. Me da mucha confianza traer a Max aquí.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+  }
+];
+---
+
+<section id="testimonios" class="py-24 bg-teal-900 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-teal-500 rounded-full blur-3xl opacity-20"></div>
+  <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 text-white">
+      <h2 class="text-4xl font-bold mb-4">Historias Reales</h2>
+      <p class="text-teal-100 max-w-2xl mx-auto">La confianza de nuestros clientes es nuestra mayor satisfacción.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/15 transition-all duration-300 testimonial-card opacity-0">
+          <div class="flex items-center gap-4 mb-6">
+            <img src={testimonial.image} alt={testimonial.name} class="w-14 h-14 rounded-full border-2 border-teal-400 object-cover" />
+            <div>
+              <h4 class="font-bold text-white text-lg">{testimonial.name}</h4>
+              <p class="text-teal-300 text-sm">{testimonial.pet}</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-100 italic leading-relaxed">"{testimonial.text}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

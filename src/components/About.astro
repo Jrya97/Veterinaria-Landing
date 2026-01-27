@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import VetTeam from '../assets/VetTeam.webp';
+import AniamlTeam from '../assets/TeamAnimal.webp';
+---
+
+<section id="nosotros" class="py-24 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="lg:w-1/2 relative group about-image-content opacity-0">
+        <div class="grid grid-cols-2 gap-4 group">
+          <Image src={VetTeam} class="rounded-2xl shadow-lg w-full h-64 object-cover mb-8 transform translate-y-8 group-hover:-translate-x-2 group-hover:-rotate-5  transition duration-300" alt="Vet team" />
+          <Image src={AniamlTeam} class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8 group-hover:translate-x-2 group-hover:rotate-5 transition duration-300" alt="Animal team" />
+        </div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-2xl shadow-xl text-center max-w-xs border border-gray-100">
+          <span class="text-5xl font-bold text-teal-600 block mb-2">15+</span>
+          <span class="text-gray-600 font-medium">Años cuidando familias</span>
+        </div>
+      </div>
+      
+      <div class="lg:w-1/2 about-text-content opacity-0">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Más que veterinarios, <span class="text-teal-600">somos familia</span></h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          En VetCare, entendemos que tu mascota es un miembro más de la familia. Por eso, combinamos la excelencia médica con un trato humano y cercano. Nuestras instalaciones están diseñadas para reducir el estrés y asegurar la comodidad de todos.
+        </p>
+        
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 p-3 rounded-lg text-teal-600 mt-1">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900">Equipo Certificado</h4>
+              <p class="text-gray-600">Especialistas en diversas áreas de la medicina veterinaria.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 p-3 rounded-lg text-teal-600 mt-1">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900">Laboratorio Propio</h4>
+              <p class="text-gray-600">Resultados rápidos para diagnósticos precisos y oportunos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

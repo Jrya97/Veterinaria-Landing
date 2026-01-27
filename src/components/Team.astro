@@ -1,0 +1,38 @@
+---
+const team = [
+  {
+    name: "Dra. Elena Torres",
+    role: "Cirujana Veterinaria",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop"
+  },
+  {
+    name: "Dr. Javier Méndez",
+    role: "Especialista en Exóticos",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop"
+  },
+  {
+    name: "Laura Paez",
+    role: "Auxiliar Veterinaria",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=400&auto=format&fit=crop"
+  }
+];
+---
+
+<section id="equipo" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Conoce a nuestro equipo</h2>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8">
+        {team.map(member => (
+            <div class="text-center group team-member opacity-0">
+                <div class="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-lg group-hover:border-teal-400 transition duration-300">
+                    <img src={member.image} alt={member.name} class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">{member.name}</h3>
+                <p class="text-teal-600">{member.role}</p>
+            </div>
+        ))}
+      </div>
+  </div>
+</section>
